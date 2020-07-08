@@ -18,7 +18,7 @@ void SlotFunSingleton::addMapValue(QString strName, QObject* pObj)
 QObject* SlotFunSingleton::getObj( QString strName)
 {
 	QObject *pReturn = NULL;
-	QMap<QString,QObject*>::const_iterator itor = m_slotfunsMap.constFind(strName);
+	QMap<QString,QObject*>::iterator itor = m_slotfunsMap.find(strName);
 	if(itor != m_slotfunsMap.end()){
 		pReturn = itor.value();
 	}
